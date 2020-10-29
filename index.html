@@ -9,11 +9,12 @@
 </head>
 <body>
 
-    <div class="cover hide">
+    <!-- hide class -->
+    <div id="cover" class="cover hide">
         <div class="cover_content">
             <div>
                 <h2 class="header">Congratulations</h2>
-                <button class="btn" type="submit">Back</button>
+                <button id="btn-back" class="btn" type="submit">Back</button>
             </div>
         </div>
     </div>
@@ -22,13 +23,14 @@
         <form class="container">            
             <h1 class="header">Register With Us</h1>
 
-            <div class="form-group success">
+            <!-- success and error class -->
+            <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" placeholder="Enter a username...">
                 <small>error message</small>
             </div>
             
-            <div class="form-group error">
+            <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" id="email" placeholder="Enter an email..." >
                 <small>error message</small>
@@ -46,7 +48,7 @@
                 <small>error message</small>
             </div>
 
-            <button class="btn" type="submit">Submit</button>
+            <button id="btn-submit" class="btn" type="submit">Submit</button>
         </form>
     </main>
 
