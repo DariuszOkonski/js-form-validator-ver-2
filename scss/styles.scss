@@ -1,4 +1,5 @@
 $primary-color: #ebe9e9;
+$secondary-color: darken($primary-color, 50%);
 $white-color: #fff;
 
 *, *::before, *::after {
@@ -18,18 +19,82 @@ body {
     align-items: center;
 }
 
+main {
+    width: 90%;
+    max-width: 500px;
+    min-width: 310px;
+}
+
 .container {
     background-color: $white-color;
     padding: 1rem;
+    width: 100%;
+
     border-radius: 0.5rem;
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
 }
 
 .header {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 100;
     text-transform: uppercase;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+}
+
+.form-group {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: $secondary-color;
+    
+
+    label, input, small {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        width: 100%;
+        color: $secondary-color;
+        border: 1px solid $primary-color;
+        border-radius: 0.2rem;
+
+        &:focus {
+            outline: 0;
+            border-color: $secondary-color;
+        }
+    }
+
+    small {
+        font-size: 0.8rem;
+        visibility: hidden;
+    }
+}
+
+.form-group.success {
+    input {
+        border: 2px solid green;
+    }
+
+    small {
+        visibility: hidden;
+    }
+}
+
+.form-group.error {
+    input {
+        border: 2px solid red;
+    }
+
+    small {
+        visibility: visible;
+        color: red;
+    }
 }
