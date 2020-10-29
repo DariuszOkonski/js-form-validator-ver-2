@@ -9,6 +9,7 @@ $error-color: rgb(247, 81, 81);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -124,4 +125,36 @@ main {
         cursor: pointer;
         background-color: darken($additional-color, 20%);
     }
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: $white-color, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_content {
+        background-color: $white-color;
+        width: 100%;
+        padding: 2rem 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+    }
+}
+
+.cover.hide {
+    display: none;
 }
