@@ -1,6 +1,9 @@
 $primary-color: #ebe9e9;
 $secondary-color: darken($primary-color, 50%);
+$additional-color: rgb(111, 111, 250);
 $white-color: #fff;
+$success-color: rgb(29, 219, 29);
+$error-color: rgb(247, 81, 81);
 
 *, *::before, *::after {
     margin: 0;
@@ -44,7 +47,7 @@ main {
 }
 
 .form-group {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     font-size: 1rem;
     color: $secondary-color;
     
@@ -56,6 +59,7 @@ main {
 
     label {
         font-size: 1.2rem;
+        letter-spacing: 1px;
     }
 
     input {
@@ -80,7 +84,7 @@ main {
 
 .form-group.success {
     input {
-        border: 2px solid green;
+        border: 2px solid $success-color;
     }
 
     small {
@@ -90,11 +94,34 @@ main {
 
 .form-group.error {
     input {
-        border: 2px solid red;
+        border: 2px solid $error-color;
     }
 
     small {
         visibility: visible;
-        color: red;
+        color: $error-color;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $white-color;
+    background-color: $additional-color;
+    transition: .2s;
+
+    &:focus {
+        outline: 0;
+    }
+
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($additional-color, 20%);
     }
 }

@@ -46,7 +46,7 @@ main {
 }
 
 .form-group {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   font-size: 1rem;
   color: #706565;
 }
@@ -58,6 +58,7 @@ main {
 
 .form-group label {
   font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .form-group input {
@@ -80,7 +81,7 @@ main {
 }
 
 .form-group.success input {
-  border: 2px solid green;
+  border: 2px solid #1ddb1d;
 }
 
 .form-group.success small {
@@ -88,11 +89,34 @@ main {
 }
 
 .form-group.error input {
-  border: 2px solid red;
+  border: 2px solid #f75151;
 }
 
 .form-group.error small {
   visibility: visible;
-  color: red;
+  color: #f75151;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #6f6ffa;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #0c0cf7;
 }
 /*# sourceMappingURL=styles.css.map */
