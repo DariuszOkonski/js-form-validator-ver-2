@@ -63,14 +63,15 @@ function validateElementsLength(element) {
     }
 }
 
-function checkIsEmpty() {
-    
+function checkUsername(){
     if(username.value === '') {
         showError(username, 'Username can not be empty');
     } else {
         validateElementsLength(username);
     }
-    
+}
+
+function checkEmail(){
     if(email.value === '') {
         showError(email, 'Email can not be empty');
     } else {
@@ -80,13 +81,17 @@ function checkIsEmpty() {
             showSuccess(email);
         }
     }
-    
+}
+
+function checkPassword(){
     if(password.value === '') {
         showError(password, 'Password can not be empty');
     } else {
         validateElementsLength(password);
     }
-    
+}
+
+function checkRePassword(){
     if(rePassword.value === '') {
         showError(rePassword, 'Re-password can not be empty');
     } else {
@@ -94,9 +99,15 @@ function checkIsEmpty() {
             showError(rePassword, 'Re-password is different than Password')
         } else {
             showSuccess(rePassword);
-        }
-
+        }    
     }
+}
+
+function checkIsEmpty() {
+    checkUsername();
+    checkEmai();
+    checkPassword();
+    checkRePassword();    
 }
 
 function checkIfAllValid() {
