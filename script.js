@@ -10,6 +10,11 @@ const domElements = {
     formGroups: document.querySelectorAll('.form-group')
 };
 
+const values = {
+    min: 3,
+    max: 15
+}
+
 function showError(element, message) {
     const parent = element.parentNode;
     parent.classList = 'form-group error';
@@ -80,5 +85,14 @@ domElements.form.addEventListener('click', (e) => {
 })
 
 domElements.btnBack.addEventListener('click', () => {
-    window.location.reload(true);
+    domElements.formGroups.forEach(element => {
+        element.classList = 'form-group';
+        
+        const child = element.querySelector('input');
+        child.value = '';
+    })
+    
+    domElements.cover.classList = 'cover hide';
+
+    // window.location.reload(true);
 })
