@@ -80,13 +80,25 @@ function checkIsEmpty() {
     if(password.value === '') {
         showError(password, 'Password can not be empty');
     } else {
-        showSuccess(password);
+        if(password.value.length < values.min) {
+            showWrongLength(password, values.min)
+        } else if(password.value.length > values.max) {
+            showWrongLength(password, values.max);
+        } else {
+            showSuccess(password);
+        }
+
     }
     
     if(rePassword.value === '') {
         showError(rePassword, 'Re-password can not be empty');
     } else {
-        showSuccess(rePassword);
+        if(password.value !== rePassword.value) {
+            showError(rePassword, 'Re-password is different than Password')
+        } else {
+            showSuccess(rePassword);
+        }
+
     }
 }
 
