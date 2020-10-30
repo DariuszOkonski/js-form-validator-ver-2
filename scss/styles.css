@@ -163,6 +163,11 @@ main {
   font-weight: 100;
 }
 
+.cover_content .header--small {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 .cover.hide {
   display: none;
 }

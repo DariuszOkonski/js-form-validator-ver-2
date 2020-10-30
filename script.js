@@ -71,12 +71,11 @@ domElements.form.addEventListener('click', (e) => {
 
     checkIsEmpty();
 
-    // console.log(checkIfAllValid());
 
     if(checkIfAllValid()) {
         setTimeout(() => {
             domElements.cover.classList = 'cover';            
-        }, 2000);
+        }, 1000);
     }
 })
 
