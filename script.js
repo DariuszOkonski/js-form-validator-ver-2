@@ -44,8 +44,9 @@ function showWrongLength(element, length) {
     domElements.allValid = false;
 }
 
-function checkEmailValidation() {
-    console.log('email validation');
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 function capitalizeFirstLetter(element) {
@@ -69,7 +70,11 @@ function checkIsEmpty() {
     if(email.value === '') {
         showError(email, 'Email can not be empty');
     } else {
-        showSuccess(email);
+        if(!validateEmail(email.value)) {
+            showError(email, 'Invalid email');
+        } else {
+            showSuccess(email);
+        }
     }
     
     if(password.value === '') {
