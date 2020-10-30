@@ -85,13 +85,6 @@ function checkIsEmpty() {
         showError(password, 'Password can not be empty');
     } else {
         validateElementsLength(password);
-        // if(password.value.length < values.min) {
-        //     showWrongLength(password, values.min)
-        // } else if(password.value.length > values.max) {
-        //     showWrongLength(password, values.max);
-        // } else {
-        //     showSuccess(password);
-        // }
     }
     
     if(rePassword.value === '') {
