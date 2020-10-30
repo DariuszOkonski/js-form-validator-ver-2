@@ -32,11 +32,38 @@ function showSuccess(element) {
     domElements.allValid = true;
 }
 
+function showWrongLength(element, length) {
+    const parent = element.parentNode;
+    parent.classList = 'form-group error';
+    
+    const message = length > values.min ? 'can not be more than ' : 'can not be less than ';
+
+    const small = parent.querySelector('small');
+    small.innerText = `${capitalizeFirstLetter(element.id)} ${message} ${length} characters`;
+
+    domElements.allValid = false;
+}
+
+function checkEmailValidation() {
+    console.log('email validation');
+}
+
+function capitalizeFirstLetter(element) {
+    return element.slice(0,1).toUpperCase() + element.slice(1);
+}
+
 function checkIsEmpty() {
+    
     if(username.value === '') {
         showError(username, 'Username can not be empty');
     } else {
-        showSuccess(username);
+        if(username.value.length < values.min) {
+            showWrongLength(username, values.min)
+        } else if(username.value.length > values.max) {
+            showWrongLength(username, values.max)
+        } else {
+            showSuccess(username);
+        }        
     }
     
     if(email.value === '') {
