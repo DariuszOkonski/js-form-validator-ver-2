@@ -53,18 +53,22 @@ function capitalizeFirstLetter(element) {
     return element.slice(0,1).toUpperCase() + element.slice(1);
 }
 
+function validateElementsLength(element) {
+    if(element.value.length < values.min) {
+        showWrongLength(element, values.min)
+    } else if(element.value.length > values.max) {
+        showWrongLength(element, values.max)
+    } else {
+        showSuccess(element);
+    }
+}
+
 function checkIsEmpty() {
     
     if(username.value === '') {
         showError(username, 'Username can not be empty');
     } else {
-        if(username.value.length < values.min) {
-            showWrongLength(username, values.min)
-        } else if(username.value.length > values.max) {
-            showWrongLength(username, values.max)
-        } else {
-            showSuccess(username);
-        }        
+        validateElementsLength(username);
     }
     
     if(email.value === '') {
@@ -80,14 +84,14 @@ function checkIsEmpty() {
     if(password.value === '') {
         showError(password, 'Password can not be empty');
     } else {
-        if(password.value.length < values.min) {
-            showWrongLength(password, values.min)
-        } else if(password.value.length > values.max) {
-            showWrongLength(password, values.max);
-        } else {
-            showSuccess(password);
-        }
-
+        validateElementsLength(password);
+        // if(password.value.length < values.min) {
+        //     showWrongLength(password, values.min)
+        // } else if(password.value.length > values.max) {
+        //     showWrongLength(password, values.max);
+        // } else {
+        //     showSuccess(password);
+        // }
     }
     
     if(rePassword.value === '') {
